@@ -20,4 +20,8 @@ qBittorrent/
 Thunar/ 
 xarchive/ 
 xfce/ 
-
+mimeapps.list
+pavucontrol.ini
+QtProject.conf
+user-dirs.dirs
+user-dirs.locale
