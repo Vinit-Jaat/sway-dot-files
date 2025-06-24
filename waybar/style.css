@@ -1,0 +1,209 @@
+* {
+    font-family: 'JetBrainsMono Nerd Font', 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 14px;
+    border: none;
+    box-shadow: none;
+}
+
+@define-color fg #ebdbb2;
+@define-color bg #1d2021;
+@define-color gray #3c3836;
+@define-color accent #fe8019;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+
+window#waybar {
+    background-color: @bg;
+    border-bottom: 2px solid @gray;
+    color: @fg;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    padding: 2px 0;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border-radius: 0;
+    padding: 0 8px;
+    margin-bottom: 1px;
+}
+
+button:hover {
+    background: @gray;
+    box-shadow: inset 0 -3px @accent;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: @fg;
+    padding: 0 10px;
+    margin-bottom: 1px;
+}
+
+#workspaces button:hover {
+    background: @gray;
+}
+
+#workspaces button.focused {
+    background-color: @blue;
+    color: @bg;
+    box-shadow: inset 0 -3px @fg;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @fg;
+}
+
+#mode {
+    background-color: @blue;
+    color: @bg;
+    box-shadow: inset 0 -3px @fg;
+    margin-bottom: 1px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#language,
+#keyboard-state,
+#privacy {
+    padding: 0 10px;
+    color: @fg;
+    background-color: @bg;
+    min-height: 24px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 1px;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: @green;
+    color: @bg;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @fg;
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @fg;
+        color: @bg;
+    }
+}
+
+#power-profiles-daemon.performance {
+    background-color: @red;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: @blue;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: @green;
+    color: @bg;
+}
+
+#pulseaudio.muted,
+#wireplumber.muted {
+    background-color: @gray;
+    color: @aqua;
+}
+
+#network.disconnected,
+#mpd.disconnected {
+    background-color: @red;
+}
+
+#mpd.paused {
+    background-color: @green;
+    color: @bg;
+}
+
+#mpd.stopped {
+    background-color: @gray;
+}
+
+#language,
+#keyboard-state {
+    margin: 0 5px;
+    min-width: 16px;
+    background-color: @gray;
+    color: @fg;
+    margin-bottom: 1px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: @fg;
+    margin-bottom: 1px;
+}
+
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu id="power-menu">
+  <section>
+    <item label="a shutdown" action="shutdown"/>
+    <item label="b reboot" action="reboot"/>
+    <item label="c suspend" action="suspend"/>
+    <item label="d hibernate" action="hibernate"/>
+  </section>
+</menu>
+
