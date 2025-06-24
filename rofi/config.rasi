@@ -1,0 +1,8 @@
+configuration {
+  modi: "drun,run";
+  show-icons: true;
+  icon-theme: "Papirus-Dark";
+  font: "JetBrains Mono 14";
+  //matching: "fuzzy";
+}
+@theme "gruvbox-dark"
