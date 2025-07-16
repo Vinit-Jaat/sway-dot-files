@@ -6,6 +6,7 @@ abrt/
 cava/ 
 celluloid/ 
 dconf/ 
+discord/
 google-chrome/
 htop/
 libreoffice/ 
@@ -13,7 +14,6 @@ lxqt/
 Mousepad/ 
 mpv/ 
 nautilus/ 
-nvim/ 
 obs-studio/ 
 pulse/
 qBittorrent/ 
@@ -26,3 +26,12 @@ QtProject.conf
 user-dirs.dirs
 user-dirs.locale
 xfce4/
+containers/
+Electron/
+enchant/
+gedit/
+JetBrains/
+menus/
+MongoDB\ Compass/
+Podman\ Desktop/
+Postman/
