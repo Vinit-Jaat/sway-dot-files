@@ -33,6 +33,10 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
 #output * bg /usr/share/backgrounds/default.jxl fill
 output * bg ~/Pictures/Wallpapers/1586195-artwork-men-death-Nicola-Samori-LOcchio-Occidentale.jpg fill
+
+# Dark mode setup
+##exec_always exec ~/.config/Darkmode/darkmode.sh
+bindsym Ctrl+Shift+Z exec ~/.config/automation/text-ocr.sh
 #
 # Example configuration:
 #
@@ -73,6 +77,9 @@ output * bg ~/Pictures/Wallpapers/1586195-artwork-men-death-Nicola-Samori-LOcchi
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+
+    # Text extractor
+    bindsym $mod+Shift+T exec bash -c "source /home/symbiot/.config/text-extractor/myenv/bin/activate && /home/symbiot/.config/text-extractor/bin/wayland-text-snatcher.py --capture"
 
     # Kill focused window
     bindsym $mod+q kill
@@ -239,8 +246,11 @@ input 1267:12721:ELAN0521:01_04F3:31B1_Touchpad {
 
 # 1280x720, 1440x810, 1600x900, no_focus
 for_window [class="Brave-browser"] floating enable, resize set 1600 900, move position center
+for_window [class="discord"] floating enable, resize set 1600 900, move position center
 for_window [app_id="mpv"] floating enable, resize set 1600 900, move position center
+for_window [app_id="blueman-manager"] floating enable, resize set 1600 900, move position center
 for_window [app_id="net.thunderbird.Thunderbird"] floating enable, resize set 1600 900, move position center
+for_window [app_id="org.qbittorrent.qBittorrent"] floating enable, resize set 1600 900, move position center
 
 smart_gaps off
 gaps inner 4
@@ -254,5 +264,4 @@ client.focused          #1e1e2e #6272a4 #1e1e2e #bd93f9
 client.unfocused        #1e1e2e #1e1e2e #1e1e2e #44475a
 client.focused_inactive #1e1e2e #282a36 #1e1e2e #44475a
 client.urgent           #1e1e2e #ff5555 #1e1e2e #ff5555
-
 
